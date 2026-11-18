@@ -1,0 +1,14 @@
+[Unit]
+Description = Boot python script on power
+After = network-online.target
+Wants = network-online.target
+
+[Service]
+User = choman
+WorkingDirectory = /home/choman/Documents
+ExecStart = /usr/bin/python3 -u /home/choman/Documents/fyrpscript.py
+Restart = always
+RestartSec = 5
+
+[Install]
+WantedBy = multi-user.target
